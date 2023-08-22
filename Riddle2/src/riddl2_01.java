@@ -1,40 +1,36 @@
 /*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package riddle2;
 
 /**
  *
  * @author Krausser
  */
-public class Riddle2 {
+public class riddl2_01 {
 
     public static void main(String[] args) {
-        long num = 0, num2 = 0;
+        long num = 10, num2 = 0;
         int n = 9;
         boolean found = true;
 
-        if (n >= 9) {
-            num = 1000000;
-        } else {
-            num = 10;
-        }
+        
 
         do {
-            if (num % 10 != 0) {
-                num2 = transform(num);
-
-                if (num2 > num && num * n == num2) {
+            if (num % n == 0) {
+                num2 = num / n;
+                if (transform(num2) == num) {
                     found = false;
                 }
 
-                System.out.println(num);
+                System.out.println(num2);
             }
-            
+
             num++;
 
         } while (found);
 
-        System.out.println("Encontrado: " + num);
+        System.out.println("Encontrado: " + num2);
 
     }
 
@@ -72,6 +68,6 @@ public class Riddle2 {
             cont++;
         }
         return cont;
-    }
 
+    }
 }
