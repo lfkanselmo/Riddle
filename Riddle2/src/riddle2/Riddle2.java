@@ -1,6 +1,4 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
 package riddle2;
 
@@ -11,9 +9,15 @@ package riddle2;
 public class Riddle2 {
 
     public static void main(String[] args) {
-        long num = 1, num2 = 0;
+        long num, num2 = 0;
         int n = 9;
         boolean found = true;
+        
+        if (n>=9) {
+            num = 1000000;
+        } else{
+            num = 100000;
+        }
 
         do {
             num2 = transform(num);
@@ -23,6 +27,8 @@ public class Riddle2 {
             } else {
                 num++;
             }
+            
+            System.out.println(num);
 
         } while (found);
 
@@ -51,8 +57,6 @@ public class Riddle2 {
         for (int i = 1; i < cDig; i++) {
             number *= 10;
         }
-
-        System.out.println(number);
         return number;
     }
 
@@ -61,7 +65,7 @@ public class Riddle2 {
 
         long count = number;
         int cont = 0;
-        while (count > 0) {            
+        while (count > 0) {
             count = Math.round(count / 10);
             cont++;
         }
